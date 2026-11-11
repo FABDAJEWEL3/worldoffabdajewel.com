@@ -11,6 +11,7 @@ const profiles = {
   youtubeMusic: "https://music.youtube.com/@fabdajewel",
   amazonMusic: "https://music.amazon.com/artists/B0CP2Z4B57",
   tidal: "https://tidal.com/artist/44090455/u",
+  soundcloud: "https://on.soundcloud.com/w9k6CxSUXVkWkYzOYB",
   pandora: "",
   instagram: "https://www.instagram.com/fabdajewel/",
   tiktok: "https://www.tiktok.com/@fabdajewel",
@@ -20,6 +21,7 @@ const services=[
  ['Spotify','spotify','♫','LISTEN NOW'],['Apple Music','appleMusic','♫','LISTEN NOW'],['YouTube Music','youtubeMusic','▶','LISTEN NOW'],['Amazon Music','amazonMusic','♫','LISTEN NOW'],['TIDAL','tidal','◆','LISTEN NOW'],['Pandora','pandora','◖','LISTEN NOW'],
  ['Instagram','instagram','◎','FOLLOW ME'],['TikTok','tiktok','♪','FOLLOW ME'],['YouTube','youtube','▶','SUBSCRIBE']
 ];
+services.push(['SoundCloud', 'soundcloud', '🎧', 'LISTEN NOW']);
 services.splice(services.findIndex(item => item[1] === 'pandora'), 1);
 for(const [name,key,glyph,cta] of services){const a=document.createElement('a');const url=profiles[key];const valid=typeof url==='string'&&/^https:\/\//i.test(url);a.className='link';a.innerHTML='<span class="glyph"></span><span></span><span class="action"></span>';a.children[0].textContent=glyph;a.children[1].textContent=name;a.children[2].textContent=valid?cta:'COMING SOON';if(valid){a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.setAttribute('aria-label',name+' official artist profile')}else{a.setAttribute('aria-disabled','true');a.setAttribute('title','Official profile link pending verification');a.addEventListener('click',e=>e.preventDefault())}document.getElementById(['instagram','tiktok','youtube'].includes(key)?'social':'music').appendChild(a)}
 </script></body></html>
