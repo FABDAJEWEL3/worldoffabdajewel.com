@@ -17,13 +17,18 @@ const profiles = {
   tiktok: "https://www.tiktok.com/@fabdajewel",
   youtube: "https://www.youtube.com/@fabdajewel",
 facebook: "https://www.facebook.com/share/1a9Ft3eTNY/?mibextid=wwXIfr",
-snapchat: "https://snapchat.com/t/LKhwczpO"
+snapchat: "https://snapchat.com/t/LKhwczpO",
+deezer: "https://link.deezer.com/s/34WOxIWjJYjmRKqPVWNty",
+iheart: "https://www.iheart.com/artist/fab-da-jewel-41881480"
 };
 const services=[
  ['Spotify','spotify','♫','LISTEN NOW'],['Apple Music','appleMusic','♫','LISTEN NOW'],['YouTube Music','youtubeMusic','▶','LISTEN NOW'],['Amazon Music','amazonMusic','♫','LISTEN NOW'],['TIDAL','tidal','◆','LISTEN NOW'],['Pandora','pandora','◖','LISTEN NOW'],
  ['Instagram','instagram','◎','FOLLOW ME'],['TikTok','tiktok','♪','FOLLOW ME'],['YouTube','youtube','▶','SUBSCRIBE']
 ];
 services.push(['SoundCloud', 'soundcloud', '🎧', 'LISTEN NOW']);
+services.push(['Deezer', 'deezer', '🎵', 'LISTEN NOW']);
+services.push(['iHeartRadio', 'iheart', '❤️', 'LISTEN NOW']);
+
 const socialStart = services.findIndex(item => item[1] === 'instagram');
 services.splice(socialStart + 3, 0,
   ['Facebook', 'facebook', 'f', 'FOLLOW ME'],
