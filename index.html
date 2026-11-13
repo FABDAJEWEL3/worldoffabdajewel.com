@@ -15,12 +15,16 @@ const profiles = {
   pandora: "https://pandora.app.link/DytlLsQx17b",
   instagram: "https://www.instagram.com/fabdajewel/",
   tiktok: "https://www.tiktok.com/@fabdajewel",
-  youtube: "https://www.youtube.com/@fabdajewel"
+  youtube: "https://www.youtube.com/@fabdajewel",
+facebook: "https://www.facebook.com/share/1a9Ft3eTNY/?mibextid=wwXIfr",
+snapchat: "https://snapchat.com/t/LKhwczpO"
 };
 const services=[
  ['Spotify','spotify','♫','LISTEN NOW'],['Apple Music','appleMusic','♫','LISTEN NOW'],['YouTube Music','youtubeMusic','▶','LISTEN NOW'],['Amazon Music','amazonMusic','♫','LISTEN NOW'],['TIDAL','tidal','◆','LISTEN NOW'],['Pandora','pandora','◖','LISTEN NOW'],
  ['Instagram','instagram','◎','FOLLOW ME'],['TikTok','tiktok','♪','FOLLOW ME'],['YouTube','youtube','▶','SUBSCRIBE']
 ];
+services.push(['Facebook', 'facebook', 'f', 'FOLLOW ME']);
+services.push(['Snapchat', 'snapchat', '👻', 'FOLLOW ME']);
 services.push(['SoundCloud', 'soundcloud', '🎧', 'LISTEN NOW']);
 
 for(const [name,key,glyph,cta] of services){const a=document.createElement('a');const url=profiles[key];const valid=typeof url==='string'&&/^https:\/\//i.test(url);a.className='link';a.innerHTML='<span class="glyph"></span><span></span><span class="action"></span>';a.children[0].textContent=glyph;a.children[1].textContent=name;a.children[2].textContent=valid?cta:'COMING SOON';if(valid){a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.setAttribute('aria-label',name+' official artist profile')}else{a.setAttribute('aria-disabled','true');a.setAttribute('title','Official profile link pending verification');a.addEventListener('click',e=>e.preventDefault())}document.getElementById(['instagram','tiktok','youtube'].includes(key)?'social':'music').appendChild(a)}
